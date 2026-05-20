@@ -169,10 +169,10 @@
 </head>
 
 <body>
-  <!-- 🔙 BOTÃO DE VOLTAR -->
+  <!-- BOTÃO DE VOLTAR -->
   <a href="login.php" class="back-button"><i class='bx bx-arrow-back'></i></a>
 
-  <!-- 💬 MENSAGEM DE EMAIL ENVIADO -->
+  <!-- MENSAGEM DE EMAIL ENVIADO -->
   <div id="mensagem" class="mensagem sucesso" style="display: none;">Email enviado com sucesso!</div>
 
   <!-- ======= FORMULÁRIO ======= -->
