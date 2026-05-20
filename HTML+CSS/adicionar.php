@@ -2,7 +2,7 @@
 session_start();
 include 'conexao.php';
 
-/* 🔥 CORREÇÃO IMPORTANTE: cpf minúsculo */
+
 if (!isset($_SESSION["cpf"]) || $_SESSION["tipo"] !== "admin") {
     header("Location: adm.php"); // ou login.php se quiser
     exit;
