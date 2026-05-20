@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cpf = preg_replace('/[^0-9]/', '', trim($_POST["cpf"]));
     $senha = trim($_POST["senha"]);
 
-    // 🔐 ADMIN FIXO
+    // ADMIN FIXO
     if ($cpf === "1" && $senha === "123") {
 
         $_SESSION["cpf"] = "00001";
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // 🔎 LOGIN USUÁRIO
+    // LOGIN USUÁRIO
     $stmt = $conn->prepare("SELECT * FROM usuarios WHERE cpf = ?");
 
     if (!$stmt) {
