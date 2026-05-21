@@ -1,0 +1,75 @@
+/* ===== VARIÁVEIS DE CORES DO SISTEMA ===== */
+:root {
+  --rosa-escuro: #ec95c1;
+  --creme: #fcfcec;
+  --marrom: #79564d;
+  --marrom-claro: #8d6d52;
+  --marrom-escuro: #57362e;
+}
+
+/* ===== ESTILO GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--creme);
+}
+
+/* ===== MODAL DE AVISO ===== */
+.aviso-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+/* caixa do aviso */
+.aviso-box {
+  background: white;
+  color: var(--marrom-escuro);
+  padding: 25px 35px;
+  border-radius: 12px;
+  width: 350px;
+  text-align: center;
+  border: 2px solid var(--rosa-escuro);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  transform: scale(0.85);
+  transition: transform .3s ease;
+}
+
+/* quando ativo */
+.aviso-overlay.ativo {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* animação do popup */
+.aviso-overlay.ativo .aviso-box {
+  transform: scale(1);
+}
+
+/* botão do aviso */
+.btn-aviso {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: var(--marrom-escuro);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* hover botão */
+.btn-aviso:hover {
+  background: var(--rosa-escuro);
+}

@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+:root {
+    --rosa-escuro: #ec95c1;
+    --creme: #fcfcec;
+    --marrom: #79564d;;
+    --branco: #ffffff;
+    --marrom-escuro: #57362e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--creme);
+    color: var(--marrom);
+}
+
+.l-form {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+}
+
+.logo img {
+    width: 500px;
+    filter: drop-shadow(5px 5px 15px rgba(0,0,0,0.15));
+}
+
+.form {
+    background-color: var(--branco);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 320px;
+}
+
+.form__title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--rosa-escuro);
+    margin-bottom: 2rem;
+}
+
+.form__div {
+    position: relative;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--marrom);
+}
+
+.form__input {
+    width: 100%;
+    padding: 0.6rem 0.6rem 0.6rem 2rem;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--marrom);
+}
+
+.form__label {
+    position: absolute;
+    top: -1.2rem;
+    left: 2rem;
+    font-size: 0.9rem;
+    color: var(--marrom);
+}
+
+.form__forgot {
+    display: block;
+    text-align: right;
+    margin-bottom: 2rem;
+    color: var(--rosa-escuro);
+}
+
+.form__forgot:hover {
+    color: var(--marrom-escuro);
+}
+
+.form__button {
+    width: 100%;
+    background-color: var(--rosa-escuro);
+    border: none;
+    padding: 1rem;
+    border-radius: 6px;
+    color: var(--branco);
+    cursor: pointer;
+}
+
+.form__button:hover {
+    background-color: var(--marrom-escuro);
+}
+
+.back-button {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: var(--rosa-escuro);
+    color: var(--branco);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.mensagem {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    color: var(--branco);
+}
+
+.mensagem.erro {
+    background-color: #b33a3a;
+}
+
+.form__signup {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--marrom);
+}
+
+.form__signup a {
+    color: var(--rosa-escuro);
+}
+
+@media (max-width: 900px) {
+    .l-form {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -1,0 +1,292 @@
+:root {
+  --marrom: #79564d;
+  --marrom-escuro: #57362e;
+  --rosa-claro: #eecbdd;
+  --rosa-escuro: #ec95c1;
+  --cinza: #6b6b6b;
+  --branco: #ffffff;
+  --dourado: #bfa14a;
+  --creme: #fcfcec;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--creme);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* ======================
+   BOTÃO VOLTAR
+====================== */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--marrom-escuro);
+
+  color: white;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  font-size: 1.3rem;
+
+  transition: 0.3s;
+
+  margin: 25px 0 0 40px;
+}
+
+.back-button:hover {
+  background-color: var(--rosa-escuro);
+}
+
+/* ======================
+   SEÇÃO SOBRE
+====================== */
+.about {
+  max-width: 1100px;
+
+  margin: 40px auto;
+
+  padding: 40px;
+
+  background-color: white;
+
+  border-radius: 20px;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.about h1 {
+  text-align: center;
+
+  color: var(--marrom-escuro);
+
+  font-size: 42px;
+
+  margin-bottom: 20px;
+}
+
+.about p {
+  color: var(--cinza);
+
+  font-size: 17px;
+
+  line-height: 1.8;
+
+  text-align: justify;
+}
+
+/* ======================
+   CARDS
+====================== */
+.info-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+
+  margin-top: 40px;
+}
+
+.info-card {
+  background-color: var(--creme);
+
+  border-radius: 16px;
+
+  padding: 25px;
+
+  border: 1px solid #eee;
+
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.info-card h2 {
+  color: var(--marrom-escuro);
+
+  margin-bottom: 15px;
+
+  font-size: 24px;
+}
+
+.info-card p,
+.info-card li {
+  color: var(--cinza);
+
+  line-height: 1.7;
+
+  font-size: 15px;
+}
+
+.info-card ul {
+  padding-left: 20px;
+}
+
+/* ======================
+   TIME
+====================== */
+.team {
+  max-width: 1100px;
+
+  margin: 50px auto;
+
+  padding: 20px;
+}
+
+.team h2 {
+  text-align: center;
+
+  color: var(--marrom-escuro);
+
+  font-size: 36px;
+
+  margin-bottom: 40px;
+}
+
+.member {
+  background-color: white;
+
+  border-radius: 16px;
+
+  padding: 20px;
+
+  margin-bottom: 20px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+
+  transition: 0.3s;
+}
+
+.member:hover {
+  transform: translateY(-4px);
+}
+
+.member h3 {
+  margin: 0;
+
+  color: var(--marrom-escuro);
+
+  font-size: 22px;
+}
+
+.member p {
+  margin-top: 8px;
+
+  color: var(--cinza);
+
+  line-height: 1.6;
+}
+
+/* ======================
+   RODAPÉ
+====================== */
+footer {
+  background-color: var(--marrom-escuro);
+
+  color: white;
+
+  padding: 50px 20px 20px;
+
+  margin-top: 50px;
+}
+
+#footer_content {
+  display: flex;
+
+  justify-content: space-around;
+
+  flex-wrap: wrap;
+
+  gap: 40px;
+
+  max-width: 1200px;
+
+  margin: auto;
+}
+
+#footer_logo img {
+  max-width: 180px;
+}
+
+.footer_column {
+  min-width: 200px;
+}
+
+.footer_list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer_list h3 {
+  margin-bottom: 15px;
+
+  color: var(--rosa-claro);
+
+  font-size: 18px;
+}
+
+.footer_link {
+  text-decoration: none;
+
+  color: white;
+
+  display: block;
+
+  margin: 8px 0;
+
+  transition: 0.3s;
+}
+
+.footer_link:hover {
+  color: var(--rosa-claro);
+}
+
+.footer-copy {
+  text-align: center;
+
+  margin-top: 40px;
+
+  color: #ccc;
+
+  font-size: 14px;
+}
+
+/* ======================
+   RESPONSIVO
+====================== */
+@media (max-width: 800px) {
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    padding: 25px;
+  }
+
+  .about h1 {
+    font-size: 32px;
+  }
+
+}

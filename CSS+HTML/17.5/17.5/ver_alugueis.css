@@ -1,0 +1,79 @@
+/* ===== CORES DO SISTEMA ===== */
+:root {
+  --rosa-escuro: #ec95c1;
+  --creme: #fcfcec;
+  --marrom-escuro: #57362e;
+}
+
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  font-family: Arial;
+  background: var(--creme);
+}
+
+/* título da página */
+h2 {
+  text-align: center;
+  margin-top: 90px;
+  color: var(--marrom-escuro);
+}
+
+/* ===== BOTÃO VOLTAR ===== */
+.back-button {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  width: 45px;
+  height: 45px;
+  background: var(--marrom-escuro);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* hover botão voltar */
+.back-button:hover {
+  background: var(--rosa-escuro);
+}
+
+/* ===== TABELA ===== */
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* cabeçalho tabela */
+th {
+  background: var(--marrom-escuro);
+  color: white;
+  padding: 12px;
+}
+
+/* células tabela */
+td {
+  text-align: center;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* hover linhas */
+tr:hover {
+  background: #f5f5f5;
+}
+
+/* mensagem quando não houver pedidos */
+.sem-registros {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--marrom-escuro);
+  font-size: 18px;
+}

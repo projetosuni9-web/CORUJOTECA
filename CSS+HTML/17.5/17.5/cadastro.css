@@ -1,0 +1,129 @@
+/* VARIÁVEIS DE CORES */
+:root {
+    --rosa-escuro: #ec95c1;
+    --creme: #fcfcec;
+    --marrom: #79564d;
+    --branco: #ffffff;
+    --marrom-escuro: #57362e;
+}
+
+/* RESET BÁSICO */
+* { box-sizing: border-box; }
+
+/* ESTILO GERAL DA PÁGINA */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--creme);
+    overflow-x: hidden;
+}
+
+/* LAYOUT PRINCIPAL (LOGO + FORM) */
+.l-form {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 2rem;
+}
+
+/* LOGO */
+.logo img {
+    width: 400px;
+    max-width: 100%;
+}
+
+/* CAIXA DO FORMULÁRIO */
+.form {
+    background-color: var(--branco);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 320px;
+}
+
+/* TÍTULO DO FORM */
+.form__title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--marrom-escuro);
+}
+
+/* CAMPOS DO FORM */
+.form__div {
+    position: relative;
+    margin-bottom: 1.2rem;
+    border-bottom: 2px solid var(--marrom);
+}
+
+/* ÍCONES DOS CAMPOS */
+.form__icon {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    color: var(--marrom-escuro);
+}
+
+/* INPUTS */
+.form__input {
+    width: 100%;
+    padding: 8px 8px 8px 25px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+/* BOTÃO */
+.form__button {
+    width: 100%;
+    background-color: var(--marrom-escuro);
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+/* HOVER DO BOTÃO */
+.form__button:hover {
+    background-color: var(--rosa-escuro);
+}
+
+/* LINK DE LOGIN */
+.form__login {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form__login a {
+    text-decoration: none;
+    color: var(--marrom-escuro);
+}
+
+/* MENSAGEM DE ERRO */
+.mensagem {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: white;
+}
+
+.mensagem.erro {
+    background-color: red;
+}
+
+/* BOTÃO DE VOLTAR */
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--marrom-escuro);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+}
