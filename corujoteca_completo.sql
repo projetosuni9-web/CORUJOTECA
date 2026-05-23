@@ -16,6 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `categorias`
+--
+
+DROP TABLE IF EXISTS `categorias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `categorias` (
+  `id_categoria` int NOT NULL AUTO_INCREMENT,
+  `nome_categoria` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_categoria`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categorias`
+--
+
+LOCK TABLES `categorias` WRITE;
+/*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
+INSERT INTO `categorias` VALUES (1,'Programação'),(2,'Gestão'),(3,'Banco de Dados'),(4,'Engenharia de Software');
+/*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `compras`
 --
 
@@ -49,6 +73,30 @@ INSERT INTO `compras` VALUES (1,'22222222222',1,'Código Limpo',1,89.90,89.90),(
 UNLOCK TABLES;
 
 --
+-- Table structure for table `editoras`
+--
+
+DROP TABLE IF EXISTS `editoras`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `editoras` (
+  `id_editora` int NOT NULL AUTO_INCREMENT,
+  `nome_editora` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_editora`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `editoras`
+--
+
+LOCK TABLES `editoras` WRITE;
+/*!40000 ALTER TABLE `editoras` DISABLE KEYS */;
+INSERT INTO `editoras` VALUES (1,'Alta Books'),(2,'Pearson'),(3,'Novatec'),(4,'Campus');
+/*!40000 ALTER TABLE `editoras` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `livros`
 --
 
@@ -61,7 +109,13 @@ CREATE TABLE `livros` (
   `autor` varchar(150) NOT NULL,
   `estoque` int NOT NULL,
   `preco` decimal(10,2) NOT NULL,
-  PRIMARY KEY (`codigo`)
+  `id_categoria` int DEFAULT NULL,
+  `id_editora` int DEFAULT NULL,
+  PRIMARY KEY (`codigo`),
+  KEY `fk_categoria` (`id_categoria`),
+  KEY `fk_editora` (`id_editora`),
+  CONSTRAINT `fk_categoria` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id_categoria`),
+  CONSTRAINT `fk_editora` FOREIGN KEY (`id_editora`) REFERENCES `editoras` (`id_editora`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -71,7 +125,7 @@ CREATE TABLE `livros` (
 
 LOCK TABLES `livros` WRITE;
 /*!40000 ALTER TABLE `livros` DISABLE KEYS */;
-INSERT INTO `livros` VALUES (1,'Código Limpo','Robert C. Martin',10,89.90),(2,'Scrum: A arte de fazer o dobro do trabalho na metade do tempo','Jeff Sutherland e J. J. Sutherland',8,59.90),(3,'Gestão visual de projetos: utilizando a informação para inovar','Júlio Monteiro Teixeira',6,72.50),(4,'Engenharia de Software','Ian Sommerville',7,120.00),(5,'Algoritmos em C','Nivio Ziviani',5,75.00),(6,'Banco de Dados','Carlos Heuser',9,95.00);
+INSERT INTO `livros` VALUES (1,'Código Limpo','Robert C. Martin',10,89.90,1,1),(2,'Scrum: A arte de fazer o dobro do trabalho na metade do tempo','Jeff Sutherland e J. J. Sutherland',8,59.90,2,2),(3,'Gestão visual de projetos: utilizando a informação para inovar','Júlio Monteiro Teixeira',6,72.50,2,3),(4,'Engenharia de Software','Ian Sommerville',7,120.00,4,4),(5,'Algoritmos em C','Nivio Ziviani',5,75.00,1,3),(6,'Banco de Dados','Carlos Heuser',9,95.00,3,2);
 /*!40000 ALTER TABLE `livros` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,4 +164,5 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-05-23 17:31:41
+-- Dump completed on 2026-05-23 19:43:45
+
