@@ -76,10 +76,10 @@ $conn->close();
     <!-- descrição -->
     <p><?php echo nl2br(htmlspecialchars($livro['descricao'])); ?></p>
 
-    <!-- FORM DE ALUGUEL -->
+    <!-- FORM DE COMPRA -->
     <form action="solicitar.php" method="POST">
       <input type="hidden" name="id_livro" value="<?php echo $livro['id']; ?>">
-      <button type="submit" class="botao">Solicitar Aluguel</button>
+      <button type="submit" class="botao">Solicitar Compra</button>
     </form>
 
   </div>
